@@ -5,6 +5,10 @@ li {
     padding: 0 10px;
 }
 
+li:last-child {
+    border-right: none;
+}
+
 p {
     padding-left: 50px;
     padding-top: 30px;
@@ -21,5 +25,5 @@ p {
 }
 
 .active {
-    border-bottom: 1px dashed red;
+    border-bottom: 3px dashed red;
 }
