@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // add defult class to home page
     document.getElementById('home').classList.add('active');
+    var homeContent = document.getElementById('home_content');
+    var contactContent = document.getElementById('contact_content');
+    var aboutContent = document.getElementById('about_content');
 
     document.getElementById('contact').onclick = function() {
         var content = document.getElementById('contact_content');
-        document.getElementById('home_content').style.display = 'none';
+        homeContent.style.display = 'none';
         document.getElementById('home').classList.remove('active');
-        document.getElementById('about_content').style.display = 'none';
+        aboutContent.style.display = 'none';
         document.getElementById('about').classList.remove('active');
         content.style.display = 'block';
         this.classList.add('active');
     }
     document.getElementById('home').onclick = function() {
         var content = document.getElementById('home_content');
-        document.getElementById('contact_content').style.display = 'none';
+        contactContent.style.display = 'none';
         document.getElementById('contact').classList.remove('active');
-        document.getElementById('about_content').style.display = 'none';
+        aboutContent.style.display = 'none';
         document.getElementById('about').classList.remove('active');
 
         content.style.display = 'block';
@@ -23,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     document.getElementById('about').onclick = function() {
         var content = document.getElementById('about_content');
-        document.getElementById('contact_content').style.display = 'none';
+        contactContent.style.display = 'none';
         document.getElementById('contact').classList.remove('active');
-        document.getElementById('home_content').style.display = 'none';
+        homeContent.style.display = 'none';
         document.getElementById('home').classList.remove('active');;
         content.style.display = 'block';
         this.classList.add('active');
