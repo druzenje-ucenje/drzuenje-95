@@ -5,25 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Colors for each</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             // Button is didsabled by default
             document.querySelector('#submit').disabled = true;
 
-            document.querySelector('#task').onkeyup = () => {
+            document.querySelector('#task').onkeyup = function() {
+                console.log('keyup');
                 document.querySelector('#submit').disabled = false;
             }
 
-            document.querySelector('#new-task').onsubmit = () => {
+            document.querySelector('#new-task').onsubmit = function() {
                 // Create new item for the list
                 const li = document.createElement('li');
                 li.innerHTML = document.querySelector('#task').value;
 
                 // Add item to the task list
-                document.querySelector('#tasks').append(li);
+                document.querySelector('#tasks').appendChild(li);
 
                 document.querySelector('#task').value = '';
+
+                // na svaki submit disable ponovo
                 document.querySelector('#submit').disabled = true;
 
                 return false;

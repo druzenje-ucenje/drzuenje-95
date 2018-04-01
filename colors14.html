@@ -5,16 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Colors for each</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.color-change').forEach(button => {
-                button.onclick = () => {
-                    document.querySelector("#hello").style.color = button.dataset.color;
-                }
-            })
-        });
-    </script>
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="colors.js"></script>
 </head>
 <body>
     <h1 id="hello">Hello!</h1>

@@ -5,16 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Colors for each</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelector('#new-task').onsubmit = () => {
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('#form').onsubmit = function() {
                 // Create new item for the list
-                const li = document.createElement('li');
-                li.innerHTML = document.querySelector('#task').value;
+                var li_item = document.createElement('li'); // moze da se razlikuje varijabla od imena elementa
+                console.log(li_item); // li sa vrednoscu ako je ima
+
+                console.log(li_item.innerHTML); // nista
+
+
+                li_item.innerHTML = document.querySelector('#task').value;
+                // li_item.style.background = 'yellow'; // setujemo background
+                // li_item.style.color = 'red';
+
+                console.log(li_item.innerHTML); // nesto
 
                 // Add item to the task list
-                document.querySelector('#tasks').append(li);
+                document.querySelector('#tasks_list').append(li_item);
 
                 document.querySelector('#task').value = '';
 
@@ -24,11 +33,11 @@
     </script>
 </head>
 <body>
-    <h1>tasks</h1>
-    <ul id="tasks">
+    <h1>Tasks</h1>
+    <ol id="tasks_list">
 
-    </ul>
-    <form action="" id="new-task">
+    </ol>
+    <form action="" id="form">
         <input id="task" type="text" autocomplete="off" placeholder="New task">
         <input type="submit">
     </form>
